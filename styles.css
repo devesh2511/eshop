@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0000001a;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.navbar {
+    background-color: #000000a1;
+    color: white;
+    margin: 0px 0px 20px 0px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.logo,
+.vw-cart,
+.cat {
+    padding: 20px 10px 20px 10px;
+}
+
+.catalogue,
+.prods {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.prod {
+    width: 15rem;
+    border: none;
+    margin: 10px;
+    box-shadow: #0000001a 3px 3px 20px 0px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.product-page {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    border: none;
+}
+
+.card-body {
+    margin: 0px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.prod:hover {
+    transform: scale(1.03);
+    transition: transform .3s;
+}
+
+.card-img-top {
+    width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+    margin: 10px 0;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    margin: 10px 0px 5px 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-cart {
+    background-color: #0000001a;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-cart:hover {
+    background-color: #000000a1;
+    color: #ffffff;
+    transform: scale(1.01);
+    transition: transform .1s;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    margin: 10px 0px 10px 0px;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    transition: transform .3s;
+}
+
+.prod-content {
+    width: 90%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.prod-page-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.prod-page-details {
+    width: 30rem;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.img-fluid {
+    width: 20rem;
+
+}
+
+.container-cart {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+table {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 15px 10px 15px;
+    margin: 20px 5px 10px 5px;
+    width: 95%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.payment-page {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0px 30px 0px 30px;
+    padding: 20px;
+    width: 90%;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.total {
+    width: 25rem;
+}
+
+#payment-form {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-detail {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 5px 10px 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input {
+    border: none;
+    outline: none;
+    line-height: 1.5;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px 10px 5px 10px;
+    margin: 0px 0px 0px 10px;
+    background-color: #0000001a;
+
+}
+
+label {
+    font-size: 20px;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+}

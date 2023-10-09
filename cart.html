@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="./script/cart.js" defer></script>
+</head>
+
+<!-- ... -->
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">E SHOP</a></div>
+        <div class="cat">Categories</div>
+        <div class="vw-cart">
+            <a href="cart.html">
+                <i class="fa-solid fa-cart-shopping"></i> View Cart</a>
+        </div>
+        <div class="cat"><a href="https://github.com/devesh2511" target=”_blank”>Buy me a Coffee!!</a></div>
+    </nav>
+
+    <div class="container-cart">
+        <h1>Shopping Cart</h1>
+        <a href="index.html">Continue Shopping</a>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Product Image</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Cart items will be listed here -->
+            </tbody>
+        </table>
+
+        <button onclick="proceedToPayment()" class="btn-cart">Proceed to Payment</button>
+    </div>
+</body>
+<!-- ... -->
+
+
+</html>
