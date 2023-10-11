@@ -1,7 +1,14 @@
-document.addEventListener("DOMContentLoaded", function() {
+let postsData = [];
+const postsContainer = document.querySelector(".posts-container");
+const searchDisplay = document.querySelector(".search-display");
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
     fetch('https://fakestoreapi.com/products')
         .then(res => res.json())
         .then(data => {
+            postsData = data;
             displayProducts(data);
         })
         .catch(error => {
@@ -12,10 +19,25 @@ document.addEventListener("DOMContentLoaded", function() {
 // ... (rest of the scripts.js file)
 
 function displayProducts(products) {
+
+
+    console.log('products to display = ',products);
+
+
+    
     const productsContainer = document.getElementById('products');
 
+    // const productsCatalogue = document.getElementsByClassName('catalgue');
+
+    console.log('productsContainer',productsContainer,products);
+
+    console.log('productsContainer',productsContainer.children.length,products.length);
+    
     products.forEach(product => {
-        const productDiv = document.createElement('div');
+
+
+        let productDiv = document.createElement('div');
+
         productDiv.className = 'prod';
 
         productDiv.innerHTML = `
@@ -38,6 +60,8 @@ function displayProducts(products) {
 
         productsContainer.appendChild(productDiv);
     });
+
+    console.log('productsContainer',productsContainer.children.length);
 }
 
 
@@ -65,4 +89,96 @@ function addToCart(productID, productName, productPrice, productCategory, produc
     localStorage.setItem('cart', JSON.stringify(cart));
     alert(`${productName} added to cart.`);
 }
+
+
+
+const handleSearchPosts = (query) => {
+
+    console.log('query = ', query);
+
+    const searchQuery = query.trim().toLowerCase();
+
+    if (searchQuery.length <= 1) {
+        resetPosts()
+        return
+    }
+
+    console.log('products = ', postsData);
+
+    let searchResults = [];
+
+    for (let i = 0; i < postsData.length; i++) {
+
+        let eachPost = postsData[i];
+
+        let Posttitle = eachPost.title;
+
+        let Postdesc = eachPost.description;
+
+        let Postcategory = eachPost.category;
+
+        if (Posttitle.includes(searchQuery)) {
+            searchResults.push(eachPost);
+            console.log('Title = ', eachPost);
+        }
+        // else if (Postdesc.includes(searchQuery)) {
+        //     searchResults.push(eachPost);
+        //     console.log('desc = ', eachPost);
+        // }
+        else if (Postcategory.includes(searchQuery)) {
+            console.log('category = ', eachPost);
+            searchResults.push(eachPost);
+        }
+    }
+
+    console.log('search results = ', searchResults);
+
+    // let searchResults = [postsData].filter(
+    //   (post) =>
+
+    //   console.log('post = ',post)
+    // post.categories.some((post.category) => category.toLowerCase().includes(searchQuery)) ||
+    // post.title.toLowerCase().includes(searchQuery)
+    // );
+
+    if (searchResults.length == 0) {
+        searchDisplay.innerHTML = "No results found"
+    } else if (searchResults.length == 1) {
+        searchDisplay.innerHTML = `1 result found for your query: ${query}`
+    } else {
+        searchDisplay.innerHTML = `${searchResults.length} results found for your query: ${query}`
+    }
+
+    // postsContainer.innerHTML = "";
+    // searchResults.map((post) => createPost(post));
+
+    displayProducts(searchResults);
+
+
+};
+
+const resetPosts = () => {
+    searchDisplay.innerHTML = ""
+    postsContainer.innerHTML = "";
+    searchResults.map((post) => displayProducts(post));
+};
+
+const search = document.getElementById("search");
+
+let debounceTimer;
+const debounce = (callback, time) => {
+    window.clearTimeout(debounceTimer);
+    debounceTimer = window.setTimeout(callback, time);
+};
+
+search.addEventListener(
+    "input",
+    (event) => {
+        const query = event.target.value;
+        debounce(() => handleSearchPosts(query), 500);
+    },
+    false
+);
+
+
 

@@ -22,6 +22,15 @@ body {
     width: 100%;
 }
 
+.styled{
+
+}
+
+fieldset{
+    border: none;
+    margin: 10px;
+}
+
 .logo,
 .vw-cart,
 .cat {

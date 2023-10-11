@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="styles.css">
 
     <script src="./script/script.js" defer></script>
+    <script src="./script/search.js" defer></script>
+
 </head>
 
 <!-- ... -->
@@ -19,6 +21,7 @@
     <nav class="navbar">
         <div class="logo"><a href="index.html">E SHOP</a></div>
         <div class="cat">Categories</div>
+
         <div class="vw-cart">
             <a href="cart.html">
                 <i class="fa-solid fa-cart-shopping"></i> View Cart</a>
@@ -26,8 +29,21 @@
         <div class="cat"><a href="https://github.com/devesh2511" target=”_blank”>Buy me a Coffee!!</a></div>
     </nav>
 
+    <div class="search-bar">
+        <input id="search" type="search" placeholder="Search Products" list="search-suggestions" autocomplete="off" />
+
+        <datalist id="search-suggestions">
+            <option value="clothing">
+            <option value="electronics">
+            <option value="jewelery">
+        </datalist>
+
+    </div>
+
     <div class="catalogue">
+        <div class="search-display"></div>
         <div class="prods" id="products">
+
         </div>
     </div>
 
