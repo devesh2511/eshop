@@ -3,7 +3,6 @@ const postsContainer = document.querySelector(".posts-container");
 const searchDisplay = document.querySelector(".search-display");
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
     fetch('https://fakestoreapi.com/products')
         .then(res => res.json())
@@ -16,23 +15,21 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
-// ... (rest of the scripts.js file)
 
 function displayProducts(products) {
 
 
-    console.log('products to display = ',products);
+    console.log('products to display = ', products);
 
 
-    
+
     const productsContainer = document.getElementById('products');
 
-    // const productsCatalogue = document.getElementsByClassName('catalgue');
 
-    console.log('productsContainer',productsContainer,products);
+    console.log('productsContainer', productsContainer, products);
 
-    console.log('productsContainer',productsContainer.children.length,products.length);
-    
+    console.log('productsContainer', productsContainer.children.length, products.length);
+
     products.forEach(product => {
 
 
@@ -42,7 +39,7 @@ function displayProducts(products) {
 
         productDiv.innerHTML = `
             <div class="card">
-                <a href="product.html?id=${product.id}">
+                <a class="a-prod" href="product.html?id=${product.id}">
                     <img src="${product.image}" alt="${product.title}" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">${product.title}</h5>
@@ -57,15 +54,12 @@ function displayProducts(products) {
                 </a>
             </div>
         `;
-
         productsContainer.appendChild(productDiv);
     });
 
-    console.log('productsContainer',productsContainer.children.length);
+    console.log('productsContainer', productsContainer.children.length);
 }
 
-
-// ... (rest of the scripts.js file)
 
 
 function addToCart(productID, productName, productPrice, productCategory, productDescription, productImage) {
@@ -87,6 +81,7 @@ function addToCart(productID, productName, productPrice, productCategory, produc
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
+    console.log(cart);
     alert(`${productName} added to cart.`);
 }
 
@@ -98,48 +93,39 @@ const handleSearchPosts = (query) => {
 
     const searchQuery = query.trim().toLowerCase();
 
-    if (searchQuery.length <= 1) {
-        resetPosts()
-        return
+    if (searchQuery.length < 1) {
+        // resetPosts()
+        window.location.reload();
     }
+
 
     console.log('products = ', postsData);
 
     let searchResults = [];
+
 
     for (let i = 0; i < postsData.length; i++) {
 
         let eachPost = postsData[i];
 
         let Posttitle = eachPost.title;
-
-        let Postdesc = eachPost.description;
+        const titlepost = Posttitle.trim().toLowerCase();
 
         let Postcategory = eachPost.category;
+        const categorypost = Postcategory.trim().toLowerCase();
 
-        if (Posttitle.includes(searchQuery)) {
+        if (titlepost.includes(searchQuery)) {
             searchResults.push(eachPost);
             console.log('Title = ', eachPost);
         }
-        // else if (Postdesc.includes(searchQuery)) {
-        //     searchResults.push(eachPost);
-        //     console.log('desc = ', eachPost);
-        // }
-        else if (Postcategory.includes(searchQuery)) {
-            console.log('category = ', eachPost);
+
+        if (categorypost.includes(searchQuery)) {
             searchResults.push(eachPost);
+            console.log('category = ', eachPost);
         }
     }
 
     console.log('search results = ', searchResults);
-
-    // let searchResults = [postsData].filter(
-    //   (post) =>
-
-    //   console.log('post = ',post)
-    // post.categories.some((post.category) => category.toLowerCase().includes(searchQuery)) ||
-    // post.title.toLowerCase().includes(searchQuery)
-    // );
 
     if (searchResults.length == 0) {
         searchDisplay.innerHTML = "No results found"
@@ -149,9 +135,11 @@ const handleSearchPosts = (query) => {
         searchDisplay.innerHTML = `${searchResults.length} results found for your query: ${query}`
     }
 
-    // postsContainer.innerHTML = "";
-    // searchResults.map((post) => createPost(post));
 
+    console.log(searchResults);
+    const productsContainer = document.getElementById('products');
+
+    productsContainer.innerHTML = '';
     displayProducts(searchResults);
 
 
@@ -180,5 +168,20 @@ search.addEventListener(
     false
 );
 
+function myFunction(id) {
+    document.getElementById(id).classList.toggle("show");
+}
 
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
 

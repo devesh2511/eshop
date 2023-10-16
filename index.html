@@ -19,30 +19,113 @@
 
 <body>
     <nav class="navbar">
-        <div class="logo"><a href="index.html">E SHOP</a></div>
-        <div class="cat">Categories</div>
+        <div class="logo"><a class="a-nav" href="index.html">E SHOP</a></div>
 
         <div class="vw-cart">
-            <a href="cart.html">
+            <a class="a-nav" href="cart.html">
                 <i class="fa-solid fa-cart-shopping"></i> View Cart</a>
         </div>
-        <div class="cat"><a href="https://github.com/devesh2511" target=”_blank”>Buy me a Coffee!!</a></div>
     </nav>
 
-    <div class="search-bar">
-        <input id="search" type="search" placeholder="Search Products" list="search-suggestions" autocomplete="off" />
+    <div class="categories">
 
-        <datalist id="search-suggestions">
-            <option value="clothing">
-            <option value="electronics">
-            <option value="jewelery">
-        </datalist>
+        <!-- <div class="search-bar">
+            <input id="search" type="search" placeholder="Search Products" list="search-suggestions"
+                autocomplete="off" />
+
+            <datalist id="search-suggestions">
+                <option value="clothing">
+                <option value="electronics">
+                <option value="jewelery">
+            </datalist>
+
+        </div> -->
+
+        <!-- <div class="categories"> -->
+
+            <div class="search-bar">
+                <input id="search" type="search" placeholder="Search Products" list="search-suggestions"
+                    autocomplete="off" />
+
+                <datalist id="search-suggestions">
+                    <option value="clothing">
+                    <option value="electronics">
+                    <option value="jewelery">
+                </datalist>
+
+            </div>
+
+
+            <li class="dropbtn" style="margin: 1.5px;">Mens Clothing</li>
+            <li class="dropbtn" style="margin: 1.5px;">Womens Clothing</li>
+            <li class="dropbtn" style="margin: 1.5px;">Jewelery</li>
+            <li class="dropbtn" style="margin: 1.5px;">Electronics</li>
+
+            <div class="dropdown">
+                <button onclick="myFunction('myDropdown')" class="dropbtn">SORT BY</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a onclick="myFunction('innerDropdown')" class="dropbtn">PRICE</a>
+                    <div id="innerDropdown" class="dropdown-content" style="position: relative;">
+                        <a href="#about">Low to High</a>
+                        <a href="#contact">High to Low</a>
+                    </div>
+                    <a onclick="myFunction('innerDropdown')" class="dropbtn">RATING</a>
+                    <div id="innerDropdown" class="dropdown-content" style="position: relative;">
+                        <a href="#about">Low to High</a>
+                        <a href="#contact">High to Low</a>
+                    </div>
+                    <a href="#about">RELEVANCE</a>
+                </div>
+            </div>
+
+        <!-- </div> -->
+
+        <!-- <div class="dropdown">
+            <button onclick="myFunction('myDropdown')" class="dropbtn">SORT BY</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a onclick="myFunction('innerDropdown')" class="dropbtn">PRICE</a>
+                <div id="innerDropdown" class="dropdown-content" style="position: relative;">
+                    <a href="#about">Low to High</a>
+                    <a href="#contact">High to Low</a>
+                </div>
+                <a onclick="myFunction('innerDropdown')" class="dropbtn">RATING</a>
+                <div id="innerDropdown" class="dropdown-content" style="position: relative;">
+                    <a href="#about">Low to High</a>
+                    <a href="#contact">High to Low</a>
+                </div>
+                <a href="#about">RELEVANCE</a>
+            </div>
+        </div> -->
 
     </div>
 
+    <div class="search-display"></div>
+
+
     <div class="catalogue">
-        <div class="search-display"></div>
+
         <div class="prods" id="products">
+
+        </div>
+    </div>
+
+    <div class="catalogue">
+
+        <div class="mens-prods" id="products">
+
+        </div>
+    </div>
+
+    <div class="catalogue">
+
+        <div class="womens-prods" id="products">
+
+        </div>
+    </div>
+
+    <div class="catalogue">
+
+        <div class="e-prods" id="products">
 
         </div>
     </div>

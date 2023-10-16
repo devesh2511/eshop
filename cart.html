@@ -17,20 +17,19 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo"><a href="index.html">E SHOP</a></div>
-        <div class="cat">Categories</div>
+        <div class="logo"><a class="a-nav" href="index.html">E SHOP</a></div>
+
         <div class="vw-cart">
-            <a href="cart.html">
+            <a class="a-nav" href="cart.html">
                 <i class="fa-solid fa-cart-shopping"></i> View Cart</a>
         </div>
-        <div class="cat"><a href="https://github.com/devesh2511" target=”_blank”>Buy me a Coffee!!</a></div>
     </nav>
 
     <div class="container-cart">
         <h1>Shopping Cart</h1>
         <a href="index.html">Continue Shopping</a>
 
-        <table class="table table-bordered">
+        <table class="table">
             <thead>
                 <tr>
                     <th>Product Image</th>
@@ -45,9 +44,12 @@
                 <!-- Cart items will be listed here -->
             </tbody>
         </table>
+        <div id="totalcart" style="height: 30px;"></div>
 
-        <button onclick="proceedToPayment()" class="btn-cart">Proceed to Payment</button>
+        <button id="rzp-button1" onclick="paymentGateway()" class="btn-cart">Proceed to Payment</button>
+        
     </div>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </body>
 <!-- ... -->
 
