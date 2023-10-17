@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             postsData = data;
             displayProducts(data);
+            return postsData;
+        })
+        .then(postsData => {
+            window.localStorage.setItem("productsData", JSON.stringify(postsData));
         })
         .catch(error => {
             console.error("Error fetching products:", error);
@@ -16,13 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
 function displayProducts(products) {
-
-
     console.log('products to display = ', products);
-
-
-
     const productsContainer = document.getElementById('products');
 
 
@@ -31,7 +31,6 @@ function displayProducts(products) {
     console.log('productsContainer', productsContainer.children.length, products.length);
 
     products.forEach(product => {
-
 
         let productDiv = document.createElement('div');
 
@@ -44,9 +43,9 @@ function displayProducts(products) {
                     <div class="card-body">
                         <h5 class="card-title">${product.title}</h5>
                         
-                        
                         <p><strong>Category:</strong> ${product.category}</p>
-                        <p><strong>Price:</strong> ₹${product.price}</p>
+                        <p><strong>Rating:</strong> ${product.rating.rate}</p>
+                        <p class="price"><strong>Price:</strong> ₹${product.price}</p>
 
                         <button class="btn-cart" onclick="addToCart(${product.id}, '${product.title}', ${product.price}, '${product.category}', '${product.description}', '${product.image}')">Add to Cart</button>
 

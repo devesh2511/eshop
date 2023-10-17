@@ -17,7 +17,7 @@ body {
     color: white;
     margin: 0px 0px 20px 0px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-around;
     width: 100%;
 }
@@ -89,6 +89,7 @@ label {
 .dropbtn {
     background: #00ffb79d;
     border: none;
+    outline: none;
     color: #231942;
     border-radius: 0px;
     font-weight: 600;
@@ -99,6 +100,10 @@ label {
     padding: 8px 12px;
     transition: all 0.1s;
     text-decoration: none;
+}
+option{
+    border: none;
+    outline: none;
 }
 
 .dropbtn:after,
@@ -191,7 +196,8 @@ label {
 
 .prod {
     width: 15rem;
-    height: 30rem;
+    height: fit-content;
+    min-height: 30rem;
     border: none;
     padding: 10px;
     margin: 10px;

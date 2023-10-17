@@ -19,7 +19,7 @@
 
 <body>
     <nav class="navbar">
-        <div class="logo"><a class="a-nav" href="index.html">E SHOP</a></div>
+        <div class="logo"><a class="a-nav" href="index.html"><img src="./logo.png" style="height: 3rem;"></a></div>
 
         <div class="vw-cart">
             <a class="a-nav" href="cart.html">
@@ -29,78 +29,36 @@
 
     <div class="categories">
 
-        <!-- <div class="search-bar">
+
+        <div class="search-bar">
             <input id="search" type="search" placeholder="Search Products" list="search-suggestions"
                 autocomplete="off" />
 
             <datalist id="search-suggestions">
-                <option value="clothing">
-                <option value="electronics">
-                <option value="jewelery">
+                <option value="gold">
+                <option value="shirt">
+                <option value="jacket">
             </datalist>
 
-        </div> -->
+        </div>
 
-        <!-- <div class="categories"> -->
-
-            <div class="search-bar">
-                <input id="search" type="search" placeholder="Search Products" list="search-suggestions"
-                    autocomplete="off" />
-
-                <datalist id="search-suggestions">
-                    <option value="clothing">
-                    <option value="electronics">
-                    <option value="jewelery">
-                </datalist>
-
-            </div>
+        <div class="form-group">
+            <select class="type-regular dropbtn custom-select price-sorting" id="pxp-sort-results" onchange="filter()">
+                <option value="" selected="selected disabled">Sort By</option>
+                <option value="l2h" id="l2h">Price (Low-High)</option>
+                <option value="h2l" id="h2l">Price (High-Low)</option>
+                <option value="ratingl2h" id="ratingl2h">Rating (Low-High)</option>
+                <option value="ratingh2l" id="ratingh2l">Rating (High-Low)</option>
+                <option value="atoz" id="atoz">A to Z</option>
+                <option value="ztoa" id="ztoa">Z to A</option>
+            </select>
+        </div>
 
 
-            <li class="dropbtn" style="margin: 1.5px;">Mens Clothing</li>
-            <li class="dropbtn" style="margin: 1.5px;">Womens Clothing</li>
-            <li class="dropbtn" style="margin: 1.5px;">Jewelery</li>
-            <li class="dropbtn" style="margin: 1.5px;">Electronics</li>
-
-            <div class="dropdown">
-                <button onclick="myFunction('myDropdown')" class="dropbtn">SORT BY</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a onclick="myFunction('innerDropdown')" class="dropbtn">PRICE</a>
-                    <div id="innerDropdown" class="dropdown-content" style="position: relative;">
-                        <a href="#about">Low to High</a>
-                        <a href="#contact">High to Low</a>
-                    </div>
-                    <a onclick="myFunction('innerDropdown')" class="dropbtn">RATING</a>
-                    <div id="innerDropdown" class="dropdown-content" style="position: relative;">
-                        <a href="#about">Low to High</a>
-                        <a href="#contact">High to Low</a>
-                    </div>
-                    <a href="#about">RELEVANCE</a>
-                </div>
-            </div>
-
-        <!-- </div> -->
-
-        <!-- <div class="dropdown">
-            <button onclick="myFunction('myDropdown')" class="dropbtn">SORT BY</button>
-            <div id="myDropdown" class="dropdown-content">
-                <a onclick="myFunction('innerDropdown')" class="dropbtn">PRICE</a>
-                <div id="innerDropdown" class="dropdown-content" style="position: relative;">
-                    <a href="#about">Low to High</a>
-                    <a href="#contact">High to Low</a>
-                </div>
-                <a onclick="myFunction('innerDropdown')" class="dropbtn">RATING</a>
-                <div id="innerDropdown" class="dropdown-content" style="position: relative;">
-                    <a href="#about">Low to High</a>
-                    <a href="#contact">High to Low</a>
-                </div>
-                <a href="#about">RELEVANCE</a>
-            </div>
-        </div> -->
 
     </div>
 
     <div class="search-display"></div>
-
 
     <div class="catalogue">
 
@@ -109,26 +67,6 @@
         </div>
     </div>
 
-    <div class="catalogue">
-
-        <div class="mens-prods" id="products">
-
-        </div>
-    </div>
-
-    <div class="catalogue">
-
-        <div class="womens-prods" id="products">
-
-        </div>
-    </div>
-
-    <div class="catalogue">
-
-        <div class="e-prods" id="products">
-
-        </div>
-    </div>
 
 </body>
 
