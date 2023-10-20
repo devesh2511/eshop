@@ -9,65 +9,27 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>My E-commerce Site</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="./fav.png">
 
     <script src="./script/script.js" defer></script>
-    <script src="./script/search.js" defer></script>
-
 </head>
 
 <!-- ... -->
 
 <body>
     <nav class="navbar">
-        <div class="logo"><a class="a-nav" href="index.html"><img src="./logo.png" style="height: 3rem;"></a></div>
-
+        <div class="logo"><a href="index.html">E SHOP</a></div>
+        <div class="cat">Categories</div>
         <div class="vw-cart">
-            <a class="a-nav" href="cart.html">
+            <a href="cart.html">
                 <i class="fa-solid fa-cart-shopping"></i> View Cart</a>
         </div>
+        <div class="cat"><a href="https://github.com/devesh2511" target=”_blank”>Buy me a Coffee!!</a></div>
     </nav>
 
-    <div class="categories">
-
-
-        <div class="search-bar">
-            <input id="search" type="search" placeholder="Search Products" list="search-suggestions"
-                autocomplete="off" />
-
-            <datalist id="search-suggestions">
-                <option value="gold">
-                <option value="shirt">
-                <option value="jacket">
-            </datalist>
-
-        </div>
-
-        <div class="form-group">
-            <select class="type-regular dropbtn custom-select price-sorting" id="pxp-sort-results" onchange="filter()">
-                <option value="" selected="selected disabled">Sort By</option>
-                <option value="l2h" id="l2h">Price (Low-High)</option>
-                <option value="h2l" id="h2l">Price (High-Low)</option>
-                <option value="ratingl2h" id="ratingl2h">Rating (Low-High)</option>
-                <option value="ratingh2l" id="ratingh2l">Rating (High-Low)</option>
-                <option value="atoz" id="atoz">A to Z</option>
-                <option value="ztoa" id="ztoa">Z to A</option>
-            </select>
-        </div>
-
-
-
-    </div>
-
-    <div class="search-display"></div>
-
     <div class="catalogue">
-
         <div class="prods" id="products">
-
         </div>
     </div>
-
 
 </body>
 
